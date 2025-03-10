@@ -59,7 +59,7 @@ const id = getInputId()
   }
 }
 .input {
-  padding: 28px;
+  padding: 36px;
   border-radius: 36px;
   border: 2px solid colors.$white;
   transition: border-color 0.5s;
@@ -106,5 +106,8 @@ const id = getInputId()
 }
 textarea.input {
   height: 244px;
+  @media(max-width: 360px) {
+    height: 168px;
+  }
 }
 </style>

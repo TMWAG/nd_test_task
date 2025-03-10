@@ -52,7 +52,7 @@ function closeCreateNote() {
 </script>
 
 <template>
-  <Modal :open="open" @closed="closeCreateNote">
+  <Modal :open="open" @closed="closeCreateNote" x-create-note-modal>
     <form class="form">
       <Heading size="2" text="Добавление заметки" />
       <div class="form__input">

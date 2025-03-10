@@ -47,6 +47,22 @@ defineEmits<{
       }
     }
   }
+  &[x-create-note-modal] {
+    & >.modal__window {
+      @media(max-width: 360px) {
+        width: 352px;
+        height: 632px;
+        padding: 24px 16px;
+        & >.form>.form__inputs {
+          gap: 16px;
+        }
+      }
+      @media(max-width: 1366px) {
+        width: 594px;
+        height: 800px;
+      }
+    }
+  }
 
   &__window {
     width: 780px;
