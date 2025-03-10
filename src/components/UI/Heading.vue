@@ -38,4 +38,8 @@ $headings: (
       line-height: 36px;
     }
   }
+  h4.heading {
+    font-size: 20px;
+    line-height: 26px;
+  }
 </style>

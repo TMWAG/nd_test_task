@@ -34,25 +34,27 @@ function closeRegistration() {
 </script>
 
 <template>
-  <div class="main-page">
-    <div class="main-page__text">
-      <Heading class="name" size="1" text="Мои заметки" />
-      <Heading class="slogan" size="3" text="Не забывай о важном, храни его в облаке" />
+  <main class="main">
+    <div class="main-page">
+      <div class="main-page__text">
+        <Heading class="name" size="1" text="Мои заметки" />
+        <Heading class="slogan" size="3" text="Не забывай о важном, храни его в облаке" />
+      </div>
+      <img class="main-page__illustration" src="@/assets/images/illustration.png" alt="Main page illustration">
     </div>
-    <img class="main-page__illustration" src="@/assets/images/illustration.png" alt="Main page illustration">
-  </div>
-  <Login
-    :open="modalStore.statuses.login"
-    @login-closed="closeLogin"
-    @register-open="openRegistration"
-    @login-attempt="onSuccessfulLogin"
-  />
-  <Register
-    :open="modalStore.statuses.register"
-    @register-closed="closeRegistration"
-    @login-open="openLogin"
-    @register-attempt="closeRegistration"
-  />
+    <Login
+      :open="modalStore.statuses.login"
+      @login-closed="closeLogin"
+      @register-open="openRegistration"
+      @login-attempt="onSuccessfulLogin"
+    />
+    <Register
+      :open="modalStore.statuses.register"
+      @register-closed="closeRegistration"
+      @login-open="openLogin"
+      @register-attempt="closeRegistration"
+    />
+  </main>
 </template>
 
 <style lang="scss">

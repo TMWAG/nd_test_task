@@ -47,13 +47,11 @@ function onLogout() {
 
 <template>
   <Header :email="userEmail" @logout="onLogout" />
-  <main class="main">
     <component
       :is="renderPage"
       :key="renderPage.toString()"
       @successful-login="onSuccessfulLogin"
     />
-  </main>
 </template>
 
 <style lang="scss">
@@ -75,9 +73,5 @@ function onLogout() {
     padding-bottom: 0;
   }
 }
-.add_button {
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-}
+
 </style>

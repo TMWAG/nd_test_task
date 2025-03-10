@@ -33,6 +33,8 @@ async function tryCreateNote() {
       title: title.value,
       content: content.value
     })
+    title.value = ""
+    content.value = ""
     emit('created', createRes)
   } catch (e) {
     if (e instanceof Error) {

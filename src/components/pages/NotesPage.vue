@@ -13,9 +13,6 @@ onBeforeMount(async()=>{
   notes.value = await getNotes()??[]
 })
 
-onBeforeUpdate(async()=> {
-  notes.value = await getNotes()??notes.value
-})
 function showCreateNote() {
   modalStore.toggle('createNote')
 }
@@ -32,29 +29,49 @@ function onDeleteNote(id: number) {
 </script>
 
 <template>
-  <div class="notes">
-    <Note v-for="note in notes" :note @delete-note="onDeleteNote"/>
-  </div>
-  <TheButton
-    @click="showCreateNote"
-    class="add_button"
-  >
-    <template v-slot:icon>
-      <Add />
-    </template>
-  </TheButton>
-  <CreateNote
-    :open="modalStore.statuses.createNote"
-    @create-closed="hideCreateNote"
-    @created="onNoteCreated"
-  />
+  <main class="main">
+    <div class="notes">
+      <Note v-for="note in notes" :note @delete-note="onDeleteNote"/>
+    </div>
+    <TheButton
+      @click="showCreateNote"
+      class="add_button"
+    >
+      <template v-slot:icon>
+        <Add />
+      </template>
+    </TheButton>
+    <CreateNote
+      :open="modalStore.statuses.createNote"
+      @create-closed="hideCreateNote"
+      @created="onNoteCreated"
+    />
+  </main>
 </template>
 
 <style lang="scss">
 .notes {
   display: grid;
-  // grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  @media(max-width: 1366px) {
+    gap: 20px;
+  }
+  @media(max-width: 786px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.add_button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  @media(max-width: 1366px) {
+    right: 12px;
+  }
+  @media(max-width: 768px) {
+    right: 8px
+  }
 }
 </style>

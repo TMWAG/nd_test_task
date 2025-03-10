@@ -15,7 +15,7 @@ function deleteNote() {
 </script>
 
 <template>
-  <div class="note">
+  <section class="note">
     <div class="note__cut"></div>
     <div class="note__corner"></div>
     <div class="note__header">
@@ -30,7 +30,7 @@ function deleteNote() {
         <template v-slot:text><span>Удалить</span></template>
       </TheButton>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
@@ -40,10 +40,13 @@ function deleteNote() {
 .note {
   background-color: colors.$green-light;
   border-radius: 5px;
-  min-width: 480px;
+  // min-width: 480px;
   height: fit-content;
   box-shadow: 0 15px 15px -10px black;
   position: relative;
+  @media(max-width: 1366px) {
+
+  }
   &__header {
     padding: 20px 28px;
     border-bottom: 1px solid colors.$green-middle;
@@ -68,9 +71,13 @@ function deleteNote() {
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 0% 0%);
   }
   &__content {
-    padding: 20px 28px;
+    padding:28px 28px 20px 28px;
     color: colors.$white;
     font-size: text.$normal;
+    @media(max-width: 360px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   &__footer {
     display: flex;
