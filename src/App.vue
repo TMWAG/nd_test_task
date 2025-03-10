@@ -38,7 +38,7 @@ function onLogout() {
   localStorage.removeItem('email')
   unsetAuthToken()
   userEmail.value = ''
-  currentPage.value = 'Main'
+  showHomePage()
 }
 </script>
 
