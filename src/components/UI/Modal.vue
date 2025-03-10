@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import Close from '../icons/Close.vue';
-import TheButton from './TheButton.vue';
+import Close from '../icons/Close.vue'
+import TheButton from './TheButton.vue'
 
 defineProps<{
-  open: boolean;
-}>();
+  open: boolean
+}>()
 defineEmits<{
-  (e: 'closed'): void;
-}>();
+  (e: 'closed'): void
+}>()
 </script>
 
 <template>
@@ -35,8 +35,8 @@ defineEmits<{
   width: 100%;
   height: 102%;
   background-color: mixer.adjust($color: colors.$dark, $alpha: -0.3);
-  &[x-register-modal]{
-    &>.modal__window{
+  &[x-register-modal] {
+    & > .modal__window {
       @media (max-width: 360px) {
         padding: 42px 16px;
       }
@@ -59,24 +59,22 @@ defineEmits<{
     padding: 80px;
     border-radius: 40px;
 
-    @media(max-width: 1366px) {
+    @media (max-width: 1366px) {
       width: 594px;
       padding: 56px;
     }
 
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
       width: 688px;
     }
 
-    @media(max-width: 360px) {
+    @media (max-width: 360px) {
       width: 352px;
       height: 632px;
       padding: 90px 16px;
-
-
     }
 
-    &>.close {
+    & > .close {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -92,9 +90,8 @@ defineEmits<{
     flex-direction: column;
     gap: 40px;
 
-    @media(max-width: 360px) {
+    @media (max-width: 360px) {
       gap: 28px;
-
     }
 
     &__inputs {
@@ -118,12 +115,12 @@ defineEmits<{
         align-items: center;
         flex-direction: row-reverse;
 
-        @media(max-width: 360px) {
+        @media (max-width: 360px) {
           flex-direction: column;
           gap: 12px;
         }
 
-        &>.button {
+        & > .button {
           @media (max-width: 360px) {
             width: 100%;
             justify-content: center;
@@ -137,15 +134,14 @@ defineEmits<{
       gap: 4px;
       flex-wrap: wrap;
 
-      @media(max-width: 360px) {
+      @media (max-width: 360px) {
         font-size: 14px;
         line-height: 24px;
       }
 
-      &>p {
+      & > p {
         color: colors.$gray;
         font-weight: 400;
-
       }
 
       &:has(> :only-child) {

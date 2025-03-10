@@ -32,7 +32,7 @@ export async function createNote(note: ICreateNote): Promise<INote> {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${getAuthToken()}`,
       },
-      body: JSON.stringify({...note}),
+      body: JSON.stringify({ ...note }),
     })
     if (res.ok) {
       const data: INote = await res.json()

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 defineProps<{
-  text: string;
-}>();
+  text: string
+}>()
 defineEmits<{
-  (e: 'click'): void,
-}>();
+  (e: 'click'): void
+}>()
 </script>
 
 <template>
@@ -18,7 +18,7 @@ defineEmits<{
   font-weight: 700;
   color: colors.$green-light;
   cursor: pointer;
-  transition: color .5s;
+  transition: color 0.5s;
   &:hover {
     color: colors.$white;
   }

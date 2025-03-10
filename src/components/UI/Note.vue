@@ -1,12 +1,12 @@
- <script setup lang="ts">
-import Close from '../icons/Close.vue';
-import Heading from './Heading.vue';
-import TheButton from './TheButton.vue';
+<script setup lang="ts">
+import Close from '../icons/Close.vue'
+import Heading from './Heading.vue'
+import TheButton from './TheButton.vue'
 
-const props = defineProps<{note: INote}>();
+const props = defineProps<{ note: INote }>()
 
 const emit = defineEmits<{
-  (e: 'delete-note', id: number):void
+  (e: 'delete-note', id: number): void
 }>()
 
 function deleteNote() {
@@ -44,8 +44,7 @@ function deleteNote() {
   height: fit-content;
   box-shadow: 0 15px 15px -10px black;
   position: relative;
-  @media(max-width: 1366px) {
-
+  @media (max-width: 1366px) {
   }
   &__header {
     padding: 20px 28px;
@@ -58,7 +57,7 @@ function deleteNote() {
     position: absolute;
     top: -1px;
     right: -1px;
-    clip-path: polygon(/* tl */0% 0%, /* tr */0% 0%, /* br */100% 0%, /* bl */100% 100%);
+    clip-path: polygon(/* tl */ 0% 0%, /* tr */ 0% 0%, /* br */ 100% 0%, /* bl */ 100% 100%);
   }
   &__corner {
     height: 40px;
@@ -71,10 +70,10 @@ function deleteNote() {
     clip-path: polygon(100% 100%, 0% 100%, 0% 0%, 0% 0%);
   }
   &__content {
-    padding:28px 28px 20px 28px;
+    padding: 28px 28px 20px 28px;
     color: colors.$white;
     font-size: text.$normal;
-    @media(max-width: 360px) {
+    @media (max-width: 360px) {
       font-size: 16px;
       line-height: 24px;
     }

@@ -26,7 +26,6 @@ defineEmits<{
   align-items: center;
   gap: 12px;
   @media (max-width: 360px) {
-
   }
   &:hover {
     background-color: colors.$green-middle;
@@ -41,7 +40,7 @@ defineEmits<{
     cursor: not-allowed;
   }
 
-  &:has(>:only-child) {
+  &:has(> :only-child) {
     padding: 0 20px;
   }
 }

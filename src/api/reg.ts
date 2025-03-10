@@ -9,7 +9,7 @@ export async function register(
     const res = await fetch(`${ApiUrl}/reg`, {
       ...PostReqBase,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
@@ -30,6 +30,6 @@ export async function register(
         throw new Error(`Запрос не удался, код ответа сервера ${res.status}`)
     }
   } catch (error) {
-    throw error;
+    throw error
   }
 }

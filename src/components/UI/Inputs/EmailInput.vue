@@ -1,22 +1,18 @@
 <script setup lang="ts">
-import InputWrapper from './InputWrapper.vue';
+import InputWrapper from './InputWrapper.vue'
 
 defineProps<{
-  email: string;
-  error: string;
-}>();
+  email: string
+  error: string
+}>()
 
 const emit = defineEmits<{
-  (e: 'update:emailData', email: string, error: string): void;
-}>();
+  (e: 'update:emailData', email: string, error: string): void
+}>()
 
 function validateEmail(e: Event) {
-  const input = e.target as HTMLInputElement;
-  emit(
-    "update:emailData",
-    input.value,
-    input.checkValidity() ? '': input.validationMessage
-  )
+  const input = e.target as HTMLInputElement
+  emit('update:emailData', input.value, input.checkValidity() ? '' : input.validationMessage)
 }
 </script>
 

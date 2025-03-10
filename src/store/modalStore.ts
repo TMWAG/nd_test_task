@@ -1,4 +1,4 @@
-import { reactive } from "vue"
+import { reactive } from 'vue'
 
 type ModalStatuses = keyof typeof modalStore.statuses
 
@@ -6,7 +6,7 @@ export const modalStore = reactive({
   statuses: {
     login: false,
     register: false,
-    createNote: false
+    createNote: false,
   },
   toggle(modalName: ModalStatuses): void {
     for (const key of Object.keys(this.statuses) as ModalStatuses[]) {

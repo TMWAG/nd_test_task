@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import getInputId from '@/utils/getInputId';
+import getInputId from '@/utils/getInputId'
 
 defineProps<{
-  label: string;
-  maxChars?: number;
-  charsCount?: number;
-  errorMessage?: string;
-}>();
-const id = getInputId();
+  label: string
+  maxChars?: number
+  charsCount?: number
+  errorMessage?: string
+}>()
+const id = getInputId()
 </script>
 
 <template>
   <div class="input-wrapper">
     <label class="input-wrapper__label" :for="id">{{ label }}</label>
-    <slot :id="id"/>
+    <slot :id="id" />
     <div class="input-info">
       <span v-if="errorMessage" class="input-info__error">{{ errorMessage }}</span>
       <span v-if="maxChars" class="input-info__chars-count">{{ charsCount }}/{{ maxChars }}</span>
@@ -37,7 +37,7 @@ const id = getInputId();
     color: colors.$gray;
     margin-left: 24px;
   }
-  &:has(>textarea) {
+  &:has(> textarea) {
     max-height: 316px;
   }
 }
@@ -62,7 +62,7 @@ const id = getInputId();
   padding: 28px;
   border-radius: 36px;
   border: 2px solid colors.$white;
-  transition: border-color .5s;
+  transition: border-color 0.5s;
   height: 27px;
   color: colors.$dark;
   font-size: text.$small;
@@ -92,14 +92,14 @@ const id = getInputId();
     cursor: pointer;
   }
 
-  &[type="text"] {
-    +.input__toggle-pass {
+  &[type='text'] {
+    + .input__toggle-pass {
       top: 55px;
     }
   }
 
-  &[type="password"] {
-    +.input__toggle-pass {
+  &[type='password'] {
+    + .input__toggle-pass {
       top: 56px;
     }
   }

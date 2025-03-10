@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
-import InputWrapper from './InputWrapper.vue';
+import { computed, ref, watch } from 'vue'
+import InputWrapper from './InputWrapper.vue'
 
 const props = defineProps<{
-  label: string;
-  text: string;
-  placeholder: string;
-  limit: number;
+  label: string
+  text: string
+  placeholder: string
+  limit: number
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:text', text: string): void;
+  (e: 'update:text', text: string): void
 }>()
 
 const textValue = ref<string>(props.text)
-watch(() => props.text, (newText) => textValue.value = newText)
+watch(
+  () => props.text,
+  (newText) => (textValue.value = newText),
+)
 const count = computed(() => textValue.value.length)
 
 function onInput(e: Event) {
@@ -33,6 +36,6 @@ function onInput(e: Event) {
       :id="s.id"
       :value="textValue"
       @input="onInput"
-    >
+    />
   </InputWrapper>
 </template>

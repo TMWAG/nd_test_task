@@ -29,7 +29,7 @@ export async function login(email: string, pass: string): Promise<ILoginResponse
     const res = await fetch(`${ApiUrl}/auth`, {
       ...PostReqBase,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,

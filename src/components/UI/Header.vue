@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import Login from '../icons/Login.vue';
-import TheButton from './TheButton.vue';
-import User from '../icons/User.vue';
-import TheLink from './TheLink.vue';
-import { modalStore } from '@/store/modalStore';
+import { computed, ref } from 'vue'
+import Login from '../icons/Login.vue'
+import TheButton from './TheButton.vue'
+import User from '../icons/User.vue'
+import TheLink from './TheLink.vue'
+import { modalStore } from '@/store/modalStore'
 
 defineProps<{
   email: string
 }>()
 
 const emit = defineEmits<{
-  (e: 'logout'): void;
-}>();
+  (e: 'logout'): void
+}>()
 
 function openLogin() {
   modalStore.toggle('login')
@@ -21,14 +21,17 @@ function openLogin() {
 function logOut() {
   emit('logout')
 }
-
 </script>
 
 <template>
   <header class="header">
-    <img class="header__logo" src="@/assets/images/logo.png"
+    <img
+      class="header__logo"
+      src="@/assets/images/logo.png"
       srcset="@/assets/images/logo.png 768w, @/assets/images/logo_small.png 360w"
-      sizes="(min-width: 768px) 768w, (min-width: 360px) 360w" alt="MyNotesLogo">
+      sizes="(min-width: 768px) 768w, (min-width: 360px) 360w"
+      alt="MyNotesLogo"
+    />
     <TheButton v-if="!email" @click="openLogin">
       <template v-slot:text><span>Вход</span></template>
       <template v-slot:icon>
@@ -58,15 +61,15 @@ function logOut() {
   padding: 40px 160px;
   height: 136px;
 
-  @media(max-width: 1366px) {
+  @media (max-width: 1366px) {
     padding: 20px 80px;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 20px 40px;
   }
 
-  @media(max-width: 360px) {
+  @media (max-width: 360px) {
     height: 96px;
     padding: 20px;
   }
@@ -74,7 +77,7 @@ function logOut() {
   &__logo {
     height: 50px;
 
-    @media(max-width: 360px) {
+    @media (max-width: 360px) {
       height: 36px;
     }
   }
@@ -114,7 +117,9 @@ function logOut() {
     top: 77px;
     box-shadow: 0px 15px 46px -10px black;
     z-index: 1;
-    transition: opacity 0.2s, visibility 0.2s;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
     transition-delay: 1s;
 
     &::after {
@@ -130,7 +135,7 @@ function logOut() {
   }
 
   &:hover {
-    &>.user__logout {
+    & > .user__logout {
       visibility: visible;
       opacity: 1;
     }

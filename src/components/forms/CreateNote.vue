@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import Modal from '../UI/Modal.vue';
-import Heading from '../UI/Heading.vue';
-import TextInput from '../UI/Inputs/TextInput.vue';
-import TextArea from '../UI/Inputs/TextArea.vue';
-import TheButton from '../UI/TheButton.vue';
-import ErrorMessage from '../UI/ErrorMessage.vue';
-import { createNote } from '@/api/notes';
+import { ref } from 'vue'
+import Modal from '../UI/Modal.vue'
+import Heading from '../UI/Heading.vue'
+import TextInput from '../UI/Inputs/TextInput.vue'
+import TextArea from '../UI/Inputs/TextArea.vue'
+import TheButton from '../UI/TheButton.vue'
+import ErrorMessage from '../UI/ErrorMessage.vue'
+import { createNote } from '@/api/notes'
 
 defineProps<{
   open: boolean
 }>()
 
 const emit = defineEmits<{
-  (e: 'create-closed'): void;
+  (e: 'create-closed'): void
   (e: 'created', note: INote): void
 }>()
 
-const title = ref<string>("")
+const title = ref<string>('')
 function onUpdateTitle(text: string) {
-  title.value = text;
+  title.value = text
 }
-const content = ref<string>("")
+const content = ref<string>('')
 function onUpdateContent(text: string) {
   content.value = text
 }
 
-const creationError = ref<string>("")
+const creationError = ref<string>('')
 async function tryCreateNote() {
   try {
     const createRes = await createNote({
       title: title.value,
-      content: content.value
+      content: content.value,
     })
-    title.value = ""
-    content.value = ""
+    title.value = ''
+    content.value = ''
     emit('created', createRes)
   } catch (e) {
     if (e instanceof Error) {
@@ -44,12 +44,11 @@ async function tryCreateNote() {
 }
 
 function closeCreateNote() {
-  title.value = ""
-  content.value = ""
-  creationError.value = ""
+  title.value = ''
+  content.value = ''
+  creationError.value = ''
   emit('create-closed')
 }
-
 </script>
 
 <template>
@@ -80,7 +79,7 @@ function closeCreateNote() {
             </template>
           </TheButton>
         </div>
-        <ErrorMessage v-show="creationError" :error="creationError"/>
+        <ErrorMessage v-show="creationError" :error="creationError" />
       </div>
     </form>
   </Modal>

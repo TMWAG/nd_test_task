@@ -1,4 +1,3 @@
-
 /**
  * Use to get unique id for your inputs
  * @param [notUniquePart='input-id'] Provide to change not unique part of returning id

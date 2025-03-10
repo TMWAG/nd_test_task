@@ -1,6 +1,6 @@
 @use '~/colors' as colors;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
-*{
+* {
   font-family: 'Montserrat', serif;
   font-style: normal;
   font-optical-sizing: auto;
@@ -10,5 +10,5 @@
   box-sizing: border-box;
 }
 body {
-  background-color: colors.$dark
+  background-color: colors.$dark;
 }
