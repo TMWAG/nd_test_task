@@ -89,7 +89,7 @@ const registrationError = ref<string>('')
 </script>
 
 <template>
-  <Modal :open="open" @closed="closeModal" x-register-modal>
+  <Modal :open="open" @closed="closeModal" :aria-hidden="!open" x-register-modal>
     <form class="form">
       <Heading size="2" text="Регистрация" />
       <div class="form__inputs">

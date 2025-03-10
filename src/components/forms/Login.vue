@@ -64,7 +64,7 @@ async function tryLogin() {
 </script>
 
 <template>
-  <Modal :open="open" @closed="closeModal">
+  <Modal :open="open" @closed="closeModal" :aria-hidden="!open">
     <form class="form">
       <Heading size="2" text="Вход в ваш аккаунт" />
       <div class="form__inputs">

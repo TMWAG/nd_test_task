@@ -52,7 +52,7 @@ function closeCreateNote() {
 </script>
 
 <template>
-  <Modal :open="open" @closed="closeCreateNote" x-create-note-modal>
+  <Modal :open="open" @closed="closeCreateNote" :aria-hidden="!open" x-create-note-modal>
     <form class="form">
       <Heading size="2" text="Добавление заметки" />
       <div class="form__input">
@@ -73,7 +73,7 @@ function closeCreateNote() {
       </div>
       <div class="form__footer">
         <div class="form__footer-interactive">
-          <TheButton @click="tryCreateNote">
+          <TheButton @click="tryCreateNote" title="Нажмите, чтобы создать заметку">
             <template v-slot:text>
               <span>Добавить</span>
             </template>

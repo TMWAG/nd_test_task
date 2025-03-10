@@ -17,8 +17,9 @@ function validateEmail(e: Event) {
 </script>
 
 <template>
-  <InputWrapper label="Email" :error-message="error" v-slot="s">
+  <InputWrapper label="Email" :error-message="error" v-slot="s" >
     <input
+      title="Укажите email"
       type="email"
       placeholder="Введите email"
       class="input"

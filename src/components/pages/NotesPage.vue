@@ -34,7 +34,7 @@ function onDeleteNote(id: number) {
     <div class="notes">
       <Note v-for="note in notes" :note @delete-note="onDeleteNote" />
     </div>
-    <TheButton @click="showCreateNote" class="add_button">
+    <TheButton @click="showCreateNote" class="add_button" title="Добавить заметку">
       <template v-slot:icon>
         <Add />
       </template>

@@ -3,7 +3,7 @@ defineProps<{ error: string }>()
 </script>
 
 <template>
-  <p class="error">{{ error }}</p>
+  <p class="error" role="alert">{{ error }}</p>
 </template>
 
 <style lang="scss">

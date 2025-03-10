@@ -12,8 +12,8 @@ defineEmits<{
 
 <template>
   <div class="modal" :class="open ? '' : 'modal-closed'" @click.self="$emit('closed')">
-    <div class="modal__window">
-      <TheButton class="close" @click="$emit('closed')">
+    <div class="modal__window" role="dialog">
+      <TheButton class="close" @click="$emit('closed')" title="Закрыть диалоговое окно" aria-label="Закрыть">
         <template v-slot:icon>
           <Close />
         </template>

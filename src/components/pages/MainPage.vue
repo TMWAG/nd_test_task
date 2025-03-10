@@ -35,14 +35,14 @@ function closeRegistration() {
 <template>
   <main class="main">
     <div class="main-page">
-      <div class="main-page__text">
+      <div class="main-page__text" aria-live="polite">
         <Heading class="name" size="1" text="Мои заметки" />
         <Heading class="slogan" size="3" text="Не забывай о важном, храни его в облаке" />
       </div>
       <img
         class="main-page__illustration"
         src="@/assets/images/illustration.png"
-        alt="Main page illustration"
+        alt="Иллюстрация MyNotes"
       />
     </div>
     <Login

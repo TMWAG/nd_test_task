@@ -31,6 +31,7 @@ function togglePassVisibility() {
 <template>
   <InputWrapper :label="label" :error-message="error" v-slot="s">
     <input
+      title="Введите пароль"
       placeholder="Введите пароль"
       class="input"
       required

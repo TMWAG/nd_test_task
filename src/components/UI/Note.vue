@@ -16,14 +16,14 @@ function deleteNote() {
 
 <template>
   <section class="note">
-    <div class="note__cut"></div>
-    <div class="note__corner"></div>
+    <div class="note__cut" aria-hidden></div>
+    <div class="note__corner" aria-hidden></div>
     <div class="note__header">
       <Heading size="4" :text="note.title" />
     </div>
     <div class="note__content">{{ note.content }}</div>
     <div class="note__footer">
-      <TheButton @click="deleteNote">
+      <TheButton @click="deleteNote" title="Нажмите, чтобы удалить заметку">
         <template v-slot:icon>
           <Close />
         </template>
