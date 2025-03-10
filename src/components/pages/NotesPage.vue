@@ -25,6 +25,7 @@ function onNoteCreated(note: INote) {
 }
 function onDeleteNote(id: number) {
   deleteNote(id)
+  notes.value = notes.value.filter((note) => note.id !== id)
 }
 </script>
 
